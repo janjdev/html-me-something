@@ -1,0 +1,1093 @@
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+#loader-wrapper, .loader-section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #26b99c;
+    z-index: 1000;
+}
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+		transform: translate(-50%, -50%);
+		width: 220px;
+    height: 245px;
+    /*border-radius: 50%;*/
+    /*border: 3px solid transparent;
+    border-top-color: #3498db;*/
+}
+#loader img{
+	max-width: 60%;
+	 transform-style: preserve-3D;
+	-webkit-animation: spin 5s linear infinite;
+	animation: spin 5s linear infinite;
+}
+/*#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #e74c3c;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f9c922;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}*/
+@-webkit-keyframes spin {
+    0%   {
+				transform-origin: center;
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+
+#loader {
+    z-index: 1001; /* anything higher than z-index: 1000 of .loader-section */
+}
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);  /* IE 9 */
+    transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);  /* IE 9 */
+    transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+}
+.loaded #loader {
+    opacity: 0;
+}
+.loaded #loader-wrapper {
+    visibility: hidden;
+}
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+
+    -webkit-transition: all 0.3s 0.3s ease-out;
+            transition: all 0.3s 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+        -webkit-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+                transform: translateY(-100%);
+
+        -webkit-transition: all 0.3s 0.6s ease-out;
+                transition: all 0.3s 0.6s ease-out;
+}
+
+/*.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}*/
+
+/*.loaded #loader-wrapper {
+        -webkit-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+                transform: translateY(-100%);
+
+        -webkit-transition: all 0.3s 1s ease-out;
+                transition: all 0.3s 1s ease-out;
+}*/
+.no-js #loader-wrapper {
+    display: none;
+}
+.no-js h1 {
+    color: #222222;
+}
+h1 {
+    color: #EEEEEE;
+}
+
+a, ul, ol, li, a:visited, a:hover, a:active{
+	text-decoration: none;
+	list-style: none;
+	color: inherit;
+}
+
+.row:after, .row:before{
+	display: table;
+	content: "";
+}
+.mission-body .nav, .project-body .nav, .about-body .nav, .nav{
+	color: #b1b1b1;
+}
+span.orange {
+    color: #F28043;
+}
+.nav{
+	margin-top: 5%;
+	padding: 0;
+	position: relative;
+
+}
+ul.nav-list{
+	padding: 0;
+}
+.nav ul li{
+	display: inline-block;
+	font-family: "ProximaNova-Regular";
+	font-size: 12px;
+	padding: 0 5px 0 5px;
+}
+
+.nav-list li a:hover, .nav-list li a.active{
+	border-bottom: solid 2px;
+}
+
+
+.name img, .name-footer img{
+	max-width: 100%;
+}
+
+.name-footer img{
+	padding: 15px;
+}
+ul.col-md-8.nav-list {
+    text-align: center;
+    margin-top: 10%;
+}
+.name-footer, .nav-list{
+	text-align: center;
+}
+.footer .nav-list{
+	color: #FFFFFF;
+}
+.footer{
+	background-color: #000;
+}
+ img{
+ 	max-width: 100%;
+ }
+
+/* #Page Styles
+================================================== */
+/*Home
+--------------------------------------------------  */
+.container.main{
+	background-color: rgba(0, 143, 149, .8);
+}
+
+.home-body .nav{
+	color: #fff;
+}
+
+.home-body img#bgVid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+
+.home-bird{
+	height: 180px;
+    background-image: url(../img/origami-bird.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 64px;
+    background-size: 117px 179px;
+    margin-left: 29px;
+}
+
+.home-title{
+	color: #000;
+	font-family: "AvenirLTStd-Book";
+	font-size: 48px;
+	line-height: 38px;
+	text-align: center;
+
+}
+.home-title h1, .page-title h1 {
+    border-bottom: 2px solid;
+   	display: inline-block;
+
+}
+.home-title h1 strong, .home-title h3 strong{
+	color: #fff;
+	font-family: 'AvenirLTStd-Black';
+}
+
+.home-spacer{
+	height: 62px;
+    background-image: url(../img/home-spacer.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2px 62px;
+    margin: 15px 0;
+
+}
+
+.home-activist, .home-agents, .home-audacity, .home-unite{
+	height: 100px;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    margin-top: 22px;
+    background-size: 86px  50px;
+
+}
+.home-arrow{
+	background-image: url(../img/home-arrow-down.png);
+	    background-size: 31px 62px;
+	    margin-top: 35px;
+}
+.home-world, .home-difference{
+	margin-top: 24px;
+    margin-bottom: 20px;
+}
+.home-world .world-container{
+	max-width: 500px;
+    display: inline-block;
+    padding: 00px 0px 0px 0px;
+    border: solid;
+    border-width: 2px;
+    border-color: black;
+    position: relative;
+}
+.home-world > .world-container:before {
+    content: " ";
+    display: block;
+    background-color: #e9b000;
+    width: 36px;
+    height: 4px;
+    position: absolute;
+    left: 50%;
+    margin-left: -18px;
+    top: -3px;
+}
+.home-world > .world-container:after {
+    content: " ";
+    display: block;
+    background-color: #e9b000;
+    width: 36px;
+    height: 4px;
+    position: absolute;
+    left: 50%;
+    margin-left: -18px;
+    bottom: -3px;
+}
+
+::selection {
+    background: #000;
+    color: #fff;
+    text-shadow: none;
+}
+.home-world > .world-container > h3 {
+    font-size: 38px;
+    line-height: 54px;
+    font-family: "AvenirLTStd-Book", sans-serif;
+    font-weight: normal;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 18px;
+}
+.home-end .world-container h3 {
+    font-size: 26px;
+}
+.home-title .difference-container h1{
+	border: none;
+}
+.difference-container h1 strong {
+    position: absolute;
+    top: 58%;
+    right: 50%;
+    transform: translate(50%, -58%);
+}
+.home-difference > .difference-container {
+    height: 340px;
+    display: block;
+    background-image: url(../img/home-circle.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 210px 210px;
+    text-align: center;
+    padding-right: 0px;
+    margin-top: 50px;
+}
+.home-blend {
+    	background-image: url(../img/cylinder-hat.png);
+    	background-position: center;
+    	background-size: 200px 139px;
+    	height: 159px;
+		}
+.home-audacity{
+	background-repeat: no-repeat;
+    background-size: 87px 70px;
+    margin-top: 0;
+}
+
+.home-unite{
+	background-repeat: no-repeat;
+    background-size: 87px 84px;
+    margin-top: 0;
+}
+
+.home-end .world-container {
+    min-width: 100%;
+}
+.home-end h3 strong {
+    font-family: 'AvenirLtStd-Book';
+}
+/*Vision
+------------------------------------------------- */
+.mission-body, .project-body, .about-body{
+	color: #b1b1b1;
+
+}
+
+.mission-body .name, .project-body .name, .about-body .name, .reg-body .name{
+	float: none;
+	margin: 0 auto;
+}
+
+.page-title h1, .quote p{
+	margin-top: 30px;
+	font-family: "ProximaNovaSW01SC-Thin", sans-serif;
+	font-size: 38px;
+	color: #008f95;
+	border-bottom: 1px solid #1b1b1b;
+	padding-bottom: 20px;
+}
+
+.wedo-main{
+	margin-top: 50px;
+}
+
+.wedo-main .row{
+	 position: relative;
+}
+.wedo-main p, .about-contact{
+	font-size: 26px;
+	line-height: 38px;
+	font-family: 'Proxima Nova Lt', sans-serif;
+}
+.wedo-main p span, .about-body .founder h5, .about-contact span{
+	font-family: 'ProximaNova-Bold', sans-serif;
+	color: #008f95;
+}
+.wedo-main p span.orange {
+    color: #F28043;
+}
+.mission-body .wedo-main img{
+	max-width: 150px;
+}
+.wedo-A-b img {
+    vertical-align: top;
+    transform:rotate(-40deg);
+}
+.wedo-b, .wedo-A-b, .wedo-b, .wedo-a, .page-title, .quote p {
+    text-align: center;
+}
+.wedo-main .vision-headline img {
+    max-width: 100%;
+    box-shadow: -7px -7px 12px #ccc;
+}
+.vision-callout{
+	font-family: "Proxima Nova Lt", sans-serif;
+	color: #fff;
+	text-align: center;
+}
+.vision-callout h1{
+	font-size: 1.5rem
+}
+.vision-callout:after{
+	clear: both;
+}
+.vision-quote {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 500;
+    background: rgba(0, 0, 0, .4);
+}
+.whatwedo h5 {
+    text-align: center;
+    color: #008f95;
+    font-family: "Proxima Nova Lt";
+    font-size: 16px;
+}
+
+h1.subtitle, h4.subtitle, h5.subtitle, .subtitle {
+    border: none;
+    border-width: 0px 0px 1px 0px;
+    padding-bottom: 30px;
+    margin-top: 17px;
+    margin-bottom: 39px;
+    line-height: 54px;
+    font-family: "ProximaNovaSW01SC-Thin";
+    color: #008f95;
+    font-size: 30px;
+    text-align: center;
+}
+/*h4.holder-img.subtitle{
+	margin-bottom: 0;
+	padding-bottom: 0;
+}*/
+  h3.subtitle {
+  text-align: left;
+  font-size: 14px;
+  font-family: "ProximaNova-Regular", sans-serif;
+  font-weight: normal;
+  line-height: 32px;
+  color: #bbbdbf;
+  text-transform: uppercase;
+}
+
+.vision-corework h4, .vision-corework p{
+	font-size: 16px;
+	line-height: 26px;
+	font-family: "ProximaNova-Regular", sans-serif;
+}
+.vision-corework h4 {
+    color: #008f95;
+}
+.vision-corework p{
+	font-family: "Proxima Nova Lt", sans-serif;
+}
+.vision-corework ul{
+	padding: 0;
+}
+/*Projects
+------------------------------------------------- */
+.project-body .page-title, .about-body .page-title{
+	margin-top: 0;
+}
+.project-body .page-title h1 p, .quote p{
+	font-size: 14px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-style: italic;
+	font-weight: 300;
+	margin-bottom: 0;
+}
+.quote p{
+	border: none;
+}
+.quote p{
+	color: #054B71;
+}
+h4.subtitle{
+	font-size: 26px;
+}
+
+.project-current video, .project-current img{
+	max-width: 100%;
+}
+/*.project-current img{
+	width: 50%;
+}*/
+.project-body .wedo-main p{
+	font-size: 20px;
+	line-height: 2;
+}
+.project-body .wedo-main img{
+	max-width: 100%;
+}
+
+.project-body .wedo-main .row{
+	margin: 0 15px;
+}
+video.col-xs-12.col-md-12.col-lg-9 {
+    padding: 0;
+}
+.project-body .wedo-main .row.project-current {
+    margin: 0;
+}
+.project-current h5 {
+    color: #008f95;
+		font-family: "ProximaNova-Regular", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 200;
+    border-bottom: solid 2px;
+    padding: 15px;
+}
+
+.project-current.holder img{
+	padding: 0;
+    box-shadow: 16px -16px 7px #ccc;
+}
+.project-container{
+	margin: 0 0 15px -4px;
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.project-container .project-graphic img{
+	width: 100%;
+}
+.project-copy {
+    background-color: #008f95;
+}
+.project-copy{
+	color: #fff;
+	padding: 15px;
+	font-size: ;
+}
+.project-copy h5{
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-size: 22px;
+}
+.btn.btn-whiteline {
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 0;
+}
+.project-body .wedo-main .row.project-grid{
+	margin: 50px 0;
+}
+.project-body .modal-content{
+	background-color: rgba(0, 0, 0, 0);
+}
+.project-body .modal-body{
+	padding: 0;
+}
+.project-body .modal-body .fa.fa-times{
+	color: white;
+	opacity: 1;
+}
+
+.other-projects .page-title img.other-projects-img{
+    max-width: 55%;
+
+}
+/*Masonry Grid*/
+.container-fluid{
+  padding: 0;
+}
+
+#lightbox .modal-content {
+    display: inline-block;
+    text-align: center;
+    margin: 0 50%;
+    transform: translate(-50%, 0);
+}
+
+
+.grid-sizer, .grid-item{
+  width: 33.333%;
+  padding: 0;
+  border: 0;
+}
+
+.grid-item-2{
+	width: 25%;
+}
+
+#lightbox .close {
+    opacity: 1;
+    color: rgb(255, 255, 255);
+    background-color: rgb(25, 25, 25);
+    padding: 5px 8px;
+    border-radius: 30px;
+    border: 2px solid rgb(255, 255, 255);
+    position: absolute;
+    top: -15px;
+    right: -55px;
+
+    z-index:1032;
+}
+.btn.btn-whiteline.thumbnail{
+	padding: 0;
+}
+img.grid_logo {
+    margin: 0 50%;
+    transform: translateX(-50%);
+}
+
+/*About
+--------------------------------------------------- */
+.about-body .row.headliner{
+	margin-bottom: 35px;
+}
+.about-body .quote p{
+	border: none;
+}
+
+.about-body .wedo-main img{
+	float: left;
+	max-width: 100%;
+}
+.about-contact{
+	font-size: 26px;
+	line-height: 39px;
+	margin-bottom: 30px;
+}
+.about-body .bio{
+	margin-top: 30px;
+}
+.founder-img img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+.col-xs-12.col-md-6.col-lg-3.founder-img {
+    text-align: center;
+}
+.founder h5 {
+    text-align: center;
+}
+.about-contact p {
+    text-align: center;
+}
+/*Registration
+================================================== */
+.reg-body .wedo-main{
+	margin-top: 0;
+}
+.reg-body .wedo-main h4.subtitle{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+h5.subtitle{
+	font-size: 22px;
+}
+.reg-body .page-title h1{
+	font-size: 33px;
+}
+.reg-body .workshop_name .row {
+    margin: 0 0 5px;
+}
+.workshop_name .page-title {
+    margin: 0;
+    padding: 0;
+}
+.reg-body .workshop_name .page-title h1 {
+    margin: 0;
+		padding: 0;
+}
+.workshop_details li{
+	display: inline-block;
+	width: 100%;
+}
+.workshop_details li:nth-child(1){
+	background: #5ADF17;
+}
+.workshop_details li:nth-child(2){
+	background: #022E4B;
+}
+.workshop_details li:nth-child(3){
+	background: #F5AC23;
+}
+.workshop_details li:nth-child(4){
+	background: #E45614;
+}
+.workshop_details li:nth-child(5){
+	background: #ED1C24;
+}
+.workshop_details p, .workshop_details p span {
+    font-size: 14px;
+		color: #FFFFFF;
+}
+.workshop_details h4{
+	font-size: 1rem;
+}
+.workshop_details li div:nth-child(2) {
+    border-left: solid white;
+}
+legend {
+	padding-top: 15px;
+    border-bottom: solid;
+}
+.registration h4 {
+	    font-size: 1rem;
+}
+div#registrations_forms {
+  display: none;
+}
+p.selection{
+	font-size: 16px;
+}
+.btn-secondary, #btn.btn-secondary:focus,  #btn.btn-secondary:hover, #btn.btn-secondary:disabled,  .open>.btn-secondary.dropdown-toggle, .btn-secondary:hover,
+#order-button.btn-primary, #order-button.btn-primary:focus,  #order-button.btn-primary:hover, #order-button.btn-primary:disabled,  .open>.btn-primary.dropdown-toggle, .btn-primary:hover  {
+    color: #fff;
+    background-color: #34BCD9;
+    border-color: #ccc;
+    box-shadow: 5px 6px 3px #ccc;
+		transition: scale .2s ease-in-out;
+}
+#order-button.btn-primary, #order-button.btn-primary:focus,  #order-button.btn-primary:hover, #order-button.btn-primary:disabled,  .open>.btn-primary.dropdown-toggle, .btn-primary:hover{
+		background-color: #0275d8;
+    border-color: #0275d8;
+}
+#btn.btn-secondary:active, #order-button:active{
+	box-shadow: none;
+	transform: scale(.95);
+}
+button#btn, select, #order-button {
+    outline: none;
+}
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+form#reg_info.hidden {
+    height: 0;
+}
+.billing_group div {
+    padding: 0 10px 15px;
+}
+h3.label {
+    font-size: 14px;
+    padding: 10px 0;
+}
+.input_group {
+    padding: 10px 0;
+}
+.input_group span {
+    display: block;
+}
+input {
+    font-size: .8rem;
+}
+input::placeholder{
+	font-size: .7rem;
+}
+h3.label.Children-label {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.label i.fa {
+    float: right;
+    padding: 10px;
+    margin: 5px;
+}
+.Date.input_group{
+	margin-bottom: 30px;
+}
+span.float{
+	height: 25px;
+	width: 100%;
+	display: inline-block;
+}
+input.qty{
+    max-width: 20px;
+    text-align: center;
+}
+/*Order
+==================================================  */
+.order-body h4.subtitle {
+padding-bottom: 0;
+margin-bottom: 0;
+}
+.order-img {
+	display: none;
+}
+.order-body .wedo-main{
+	margin-top: 25px;
+}
+caption {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    color: #818a91;
+    text-align: left;
+    caption-side: top;
+    padding: .75rem;
+    text-align: center;
+    color: #fff;
+    background-color: #373a3c;
+    vertical-align: bottom;
+}
+.order-summary th{
+	text-align: center;
+}
+th.order-content{
+	text-align: left;
+}
+
+button#paypal-button.btn.btn-secondary, #paypal.btn-secondary:focus,  #paypal.btn-secondary:hover, #paypal.btn-secondary:disabled,  .open>.btn-secondary.dropdown-toggle, .btn-secondary:hover{
+	background-color: #009CDE;
+	color: white;
+	box-shadow: 5px 6px 3px #d0e7ea;
+	transition: scale .2s ease-in-out;
+
+}
+button#paypal-button.btn-secondary:active{
+	box-shadow: none;
+	transform: scale(.95);
+}
+/* #Media Queries
+================================================== */
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (min-width: 479px) {}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+	/* Smaller than standard 960 (devices and browsers) */
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (min-width: 767px) {
+		ul.col-md-8.nav-list {
+   			 position: absolute;
+    		left: 30%;
+    		top: 50%;
+    		margin: 0;
+		}
+		.nav ul li{
+			font-size: 16px;
+		}
+		.home-activist{
+    	background-image: url(../img/power.png);
+		}
+
+		.home-agents{
+			background-image: url(../img/transformation.png);
+		}
+
+		.home-title{
+			text-align: right;
+		}
+		.home-activist{
+			width: auto;
+		}
+		.home-world, .home-difference{
+		text-align: center;
+		}
+		.home-audacity{
+			background-image: url(../img/strength.png);
+			background-position: top right 250px;
+		}
+		.build-container{
+			text-align: left;
+		}
+		.home-unite{
+			background-image: url(../img/logo.png);
+			background-position: top 0px left 220px;
+		}
+		.col-md-12.home-spacer.home-arrow.long {
+    		background-size: 31px 120px;
+    		height: 120px;
+
+		}
+		.home-end .world-container h3 {
+    		font-size: 38px;
+		}
+		.mission-body .name, .project-body .name, .about-body .name, .reg-body .name{
+			float: left;
+			margin: auto;
+		}
+		.page-title{
+			margin-top: 2em;
+			text-align: left;
+		}
+		.wedo-main .row{
+			margin: 35px 0;
+		}
+
+		.mission-body.wedo-main img{
+			max-width: 150px;
+		}
+		.wedo-A-b{
+			float: right;
+			text-align: left;
+		}
+		.wedo-A-b img {
+		   /* margin-top: -100px;*/
+		}
+		.wedo-a{
+			float: left;
+			text-align: right;
+		}
+		.vision-callout{
+			margin-top: 25%;
+    		transform: translateY(-75%);
+		}
+		h1.subtitle{
+			text-align: justify;
+		}
+		h4.subtitle, h5.subtitle, .subtitle{
+			text-align: left;
+
+		}
+		.footer .nav-list{
+			position: absolute;
+		    transform: translate(70%, -50%);
+		    top: 50%;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		}
+		.order-img{
+				display: block;
+			}
+		.order-img img{
+			max-width: 40%;
+			display: block;
+			position: absolute;
+		}
+	}
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+	}
+
+	@media only screen and (min-width: 959px) {
+		h4.subtitle{
+			font-size: 38px;
+		}
+		h5.subtitle{
+			font-size: 34px;
+		}
+		video.col-xs-12.col-md-12.col-lg-9 {
+    		padding: 0 15px;
+		}
+		.order-img img{
+			left: 60%;
+		}
+	}
+	@media only screen and (min-width: 1000px) {
+		.project-body .wedo-main p{
+			font-size: 24px;
+		}
+
+	}
+	@media only screen and (min-width: 1200px) {
+		legend {
+			padding: 50px 0;
+	 		font-size: 3rem;
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+	@font-face {
+	    font-family: 'ProximaNova-Regular';
+	    src: url('./fonts/prox/ProximaNovaSemiBold.eot');
+	    src: url('./fonts/prox/ProximaNovaSemiBold.eot?iefix') format('eot'),
+	         url('./fonts/prox/ProximaNovaSemiBold.woff') format('woff'),
+	         url('./fonts/prox/ProximaNovaSemiBold.ttf') format('truetype'),
+	         url('./fonts/prox/ProximaNovaSemiBold.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+
+	@font-face {
+	    font-family: 'Proxima Nova Lt';
+	    src: url('./fonts/prox-lt/proxima_nova_light-webfont.eot');
+	    src: url('./fonts/prox-lt/proxima_nova_light-webfont.eot?iefix') format('eot'),
+	         url('./fonts/prox-lt/proxima_nova_light-webfont.woff') format('woff'),
+	         url('./fonts/prox-lt/proxima_nova_light-webfont.ttf') format('truetype'),
+	         url('./fonts/prox-lt/proxima_nova_light-webfont.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+
+	@font-face {
+	    font-family: 'ProximaNovaSW01SC-Thin';
+	    src: url('./fonts/ProxThin/Proxima Nova S W01SC Thin.eot');
+	    src: url('./fonts/ProxThin/Proxima Nova S W01SC Thin.eot?iefix') format('eot'),
+	         url('./fonts/ProxThin/Proxima Nova S W01SC Thin.woff') format('woff'),
+	         url('./fonts/ProxThin/Proxima Nova S W01SC Thin.ttf') format('truetype'),
+	         url('./fonts/ProxThin/Proxima Nova S W01SC Thin.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+
+	@font-face {
+	    font-family: 'ProximaNova-Bold';
+	    src: url('./fonts/prox-bold/ProximaNova-Bold.eot');
+	    src: url('./fonts/prox-bold/ProximaNova-Bold.eot?iefix') format('eot'),
+	         url('./fonts/prox-bold/ProximaNova-Bold.woff') format('woff'),
+	         url('./fonts/prox-bold/ProximaNova-Bold.ttf') format('truetype'),
+	         url('./fonts/prox-bold/ProximaNova-Bold.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+
+	@font-face {
+	    font-family: 'AvenirLTStd-Book';
+	    src: url('./fonts/avenir/AvenirLTStd-Book/AvenirLTStd-Book.eot');
+	    src: url('./fonts/avenir/AvenirLTStd-Book/AvenirLTStd-Book.eot?iefix') format('eot'),
+	         url('./fonts/avenir/AvenirLTStd-Book/AvenirLTStd-Book.woff') format('woff'),
+	         url('./fonts/avenir/AvenirLTStd-Book/AvenirLTStd-Book.ttf') format('truetype'),
+	         url('./fonts/avenir/AvenirLTStd-Book/AvenirLTStd-Book.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+
+	@font-face {
+	    font-family: 'AvenirLTStd-Black';
+	    src: url('./fonts/avenir/AvenirLTStd-Black/AvenirLTStd-Black.eot');
+	    src: url('./fonts/avenir/AvenirLTStd-Black/AvenirLTStd-Black.eot?iefix') format('eot'),
+	         url('./fonts/avenir/AvenirLTStd-Black/AvenirLTStd-Black.woff') format('woff'),
+	         url('./fonts/avenir/AvenirLTStd-Black/AvenirLTStd-Black.ttf') format('truetype'),
+	         url('./fonts/avenir/AvenirLTStd-Black/AvenirLTStd-Black.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i');
