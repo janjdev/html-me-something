@@ -666,6 +666,9 @@ img.grid_logo {
 .about-body .row.headliner{
 	margin-bottom: 35px;
 }
+.row.headliner h1{
+	text-transform: uppercase;
+}
 .about-body .quote p{
 	border: none;
 }
